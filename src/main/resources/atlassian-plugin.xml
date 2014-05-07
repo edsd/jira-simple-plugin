@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    </plugin-info>
+    
+    <webwork1 key="actions" name="MyActions">
+        <actions>
+            <action name="com.edsd.jira.plugins.simpleplugin.action.MyAction" alias="action" roles-required="admin">
+                <view name="success">/myaction/success.vm</view>
+            </action>
+        </actions>
+    </webwork1>
+        
+    <web-section key="my_section" name="MySection" location="atl.jira.proj.config" weight="50"/>
+    
+    <web-item key="my_item_link" name="MyTab" section="atl.jira.proj.config/my_section"  weight="10">
+        <label key="MyLink" />
+        <link linkId="my_item_link">/secure/action.jspa</link>
+    </web-item>
+    
+    <web-resource key="my-resources">
+        <dependency>com.atlassian.jira.jira-project-config-plugin:project-config-global</dependency>
+        <context>my-resources</context>
+    </web-resource>
+    
+    <component-import key="ao" name="Active Objects service" interface="com.atlassian.activeobjects.external.ActiveObjects">
+        <description>Component to access Active Objects functionality from the plugin</description>
+    </component-import>
+    
+    <ao key="ao-module">
+        <entity>com.edsd.jira.plugins.simpleplugin.entity.StudentEntity</entity>
+    </ao>
+    
+    <component key="dao-factory" class="com.edsd.jira.plugins.simpleplugin.DAO.DAOFactory">
+    </component>
+    
+</atlassian-plugin>

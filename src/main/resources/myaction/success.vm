@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>MyTestPage</title>
+        <meta name="decorator" content="atl.admin"/>
+        <meta name="projectKey" content="$project.getKey()"/>
+        <meta name="projectId" content="$project.getId()"/>
+        <meta name="admin.active.tab" content="my_item_link"/>
+        <meta name="admin.active.section" content="atl.jira.proj.config"/>
+        $webResourceManager.requireResourcesForContext("my-resources")
+    </head>
+    <body>
+        <form action="/secure/action!add.jspa">
+            <input type="text" name="name"/>
+            <input type="submit" value="OK"/>
+        </form>
+        <br/>
+        <br/>
+        <table>
+            <thead>
+                <th>
+                    id
+                </th>
+                <th>
+                    name
+                </th>
+                <th>
+                    created
+                </th>
+            </thead>
+            <tbody>
+            #foreach($student in $students)
+                <tr>
+                    <td>
+                        $student.getID()
+                    </td>
+                    <td>
+                        $student.getName()
+                    </td>
+                    <td>
+                        $student.getCreated()
+                    </td>
+                </tr>
+            #end
+            </tbody>
+        </table>
+    </body>
+</html>
