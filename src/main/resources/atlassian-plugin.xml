@@ -25,6 +25,7 @@
     
     <web-resource key="my-resources">
         <dependency>com.atlassian.jira.jira-project-config-plugin:project-config-global</dependency>
+        <resource type="download" name="icon.css" location="myaction/css/icon.css"/>
         <context>my-resources</context>
     </web-resource>
     
@@ -38,5 +39,7 @@
     
     <component key="dao-factory" class="com.edsd.jira.plugins.simpleplugin.DAO.DAOFactory">
     </component>
+
+    <resource type="download" name="images/" location="images/" />
     
 </atlassian-plugin>
