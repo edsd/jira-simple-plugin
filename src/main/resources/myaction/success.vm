@@ -11,7 +11,9 @@
     </head>
     <body>
         <form action="/secure/action!add.jspa">
+            <input type="hidden" name="pid" value="$project.getId()"/>
             <input type="text" name="name"/>
+            <input type="text" name="surname"/>
             <input type="submit" value="OK"/>
         </form>
         <br/>
@@ -25,6 +27,9 @@
                     name
                 </th>
                 <th>
+                    surname
+                </th>
+                <th>
                     created
                 </th>
             </thead>
@@ -36,6 +41,9 @@
                     </td>
                     <td>
                         $student.getName()
+                    </td>
+                    <td>
+                        $student.getSurname()
                     </td>
                     <td>
                         $student.getCreated()

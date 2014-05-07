@@ -6,6 +6,7 @@ import com.edsd.jira.plugins.simpleplugin.DAO.StudentDAO;
 import com.edsd.jira.plugins.simpleplugin.entity.StudentEntity;
 import com.edsd.jira.plugins.simpleplugin.logic.Student;
 import java.util.Date;
+import net.java.ao.Query;
 
 public class StudentDAOImpl implements StudentDAO {
 
@@ -25,8 +26,10 @@ public class StudentDAOImpl implements StudentDAO {
                 StudentEntity entity = ao.create(StudentEntity.class);
 
                 entity.setName(student.getName());
+                entity.setSurname(student.getSurname());
+                entity.setProjectId(student.getProjectId());
                 entity.setCreated(new Date(System.currentTimeMillis()));
-                
+
                 entity.save();
 
                 return entity;
@@ -42,6 +45,17 @@ public class StudentDAOImpl implements StudentDAO {
             public StudentEntity[] doInTransaction() {
 
                 return ao.find(StudentEntity.class);
+            }
+        });
+    }
+
+    @Override
+    public StudentEntity[] getStudentsForProject(final long projectId) throws Exception {
+        return ao.executeInTransaction(new TransactionCallback<StudentEntity[]>() {
+            @Override
+            public StudentEntity[] doInTransaction() {
+
+                return ao.find(StudentEntity.class, Query.select().order("NAME").where("PROJECT_ID=?", projectId));
             }
         });
     }

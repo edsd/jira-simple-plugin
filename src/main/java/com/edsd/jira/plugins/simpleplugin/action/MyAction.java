@@ -20,7 +20,7 @@ public class MyAction extends JiraWebActionSupport {
 
         request.setAttribute("com.atlassian.jira.projectconfig.util.ServletRequestProjectConfigRequestCache:project", project);
 
-        students = DAOFactory.getInstance().getStudentDAO().getStudents();
+        students = DAOFactory.getInstance().getStudentDAO().getStudentsForProject(project.getId());
 
         return super.execute();
 
@@ -29,9 +29,11 @@ public class MyAction extends JiraWebActionSupport {
     public String doAdd() throws Exception {
 
         String name = request.getParameterValues("name")[0];
-        
-        Student student = new StudentImpl(name);
-        
+        String surname = request.getParameterValues("surname")[0];
+        long projectId = Long.parseLong(request.getParameterValues("pid")[0]);
+
+        Student student = new StudentImpl(name, surname, projectId);
+
         DAOFactory.getInstance().getStudentDAO().addStudent(student);
 
         ServletActionContext.getResponse().sendRedirect("/secure/action.jspa");

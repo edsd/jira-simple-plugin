@@ -6,7 +6,9 @@ import com.edsd.jira.plugins.simpleplugin.logic.Student;
 public interface StudentDAO {
 
     public StudentEntity addStudent(Student student) throws Exception;
-    
+
     public StudentEntity[] getStudents() throws Exception;
+
+    public StudentEntity[] getStudentsForProject(long projectId) throws Exception;
 
 }
