@@ -1,0 +1,21 @@
+{namespace JIRA.Templates.Student}
+
+/**
+* @param student
+*/
+{template .studentRow}
+<td class="jira-restfultable-icon project-config-student-icon">
+    <span class="project-config-icon project-config-icon-student"></span>
+</td>
+<td class="project-config-student-name">
+    {$student.name}
+</td>
+<td class="project-config-student-surname">
+    {$student.surname}
+</td>
+<td class="project-config-student-created">
+    {$student.created}
+</td>
+<td class="jira-restfultable-operations"></td>
+<td class="project-config-throbber"></td>
+{/template}

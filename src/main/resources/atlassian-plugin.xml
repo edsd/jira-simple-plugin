@@ -25,7 +25,23 @@
     
     <web-resource key="my-resources">
         <dependency>com.atlassian.jira.jira-project-config-plugin:project-config-global</dependency>
+        
+        <transformation extension="less">
+            <transformer key="lessTransformer"/>
+        </transformation>
         <resource type="download" name="icon.css" location="myaction/css/icon.css"/>
+        <resource type="download" name="student.css" location="myaction/css/student.less"/>
+        
+        <transformation extension="js">
+            <transformer key="jsI18n"/>
+        </transformation>
+        <transformation extension="soy">
+            <transformer key="jiraSoyTransformer"/>
+        </transformation>
+        
+        <resource type="download" name="student-soy.js" location="myaction/templates/student.soy"/>
+        <resource type="download" name="StudentRow.js" location="myaction/js/StudentRow.js"/>
+        <resource type="download" name="student-init.js" location="myaction/js/student-init.js"/>
         <context>my-resources</context>
     </web-resource>
     
