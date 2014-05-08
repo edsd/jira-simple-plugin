@@ -4,7 +4,7 @@ import com.atlassian.jira.project.Project;
 import com.atlassian.jira.web.action.JiraWebActionSupport;
 import com.edsd.jira.plugins.simpleplugin.DAO.DAOFactory;
 import com.edsd.jira.plugins.simpleplugin.entity.StudentEntity;
-import com.edsd.jira.plugins.simpleplugin.logic.Impl.StudentImpl;
+import com.edsd.jira.plugins.simpleplugin.logic.impl.StudentImpl;
 import com.edsd.jira.plugins.simpleplugin.logic.Student;
 import webwork.action.ServletActionContext;
 

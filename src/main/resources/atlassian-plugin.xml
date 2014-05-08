@@ -42,4 +42,6 @@
 
     <resource type="download" name="images/" location="images/" />
     
+    <rest key="pluginRESTpoints" path="/simple-api" version="1.0" description="Provides REST endpoints used to display contents."/>
+    
 </atlassian-plugin>

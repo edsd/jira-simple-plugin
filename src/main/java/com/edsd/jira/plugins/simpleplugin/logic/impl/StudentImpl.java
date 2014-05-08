@@ -1,4 +1,4 @@
-package com.edsd.jira.plugins.simpleplugin.logic.Impl;
+package com.edsd.jira.plugins.simpleplugin.logic.impl;
 
 import com.edsd.jira.plugins.simpleplugin.logic.Student;
 

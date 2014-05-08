@@ -48,6 +48,32 @@
             <scope>provided</scope>
         </dependency>
         
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.atlassian.plugins.rest</groupId>
+            <artifactId>atlassian-rest-common</artifactId>
+            <version>1.0.2</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-gadgets-plugin</artifactId>
+            <version>4.4.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-rest-plugin</artifactId>
+            <version>6.8.7-20131010.074524-JRA-7659</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

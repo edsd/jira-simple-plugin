@@ -1,4 +1,4 @@
-package com.edsd.jira.plugins.simpleplugin.DAO.Impl;
+package com.edsd.jira.plugins.simpleplugin.DAO.impl;
 
 import com.atlassian.activeobjects.external.ActiveObjects;
 import com.atlassian.sal.api.transaction.TransactionCallback;

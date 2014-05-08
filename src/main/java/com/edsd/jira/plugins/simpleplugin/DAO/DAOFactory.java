@@ -1,7 +1,7 @@
 package com.edsd.jira.plugins.simpleplugin.DAO;
 
 import com.atlassian.activeobjects.external.ActiveObjects;
-import com.edsd.jira.plugins.simpleplugin.DAO.Impl.StudentDAOImpl;
+import com.edsd.jira.plugins.simpleplugin.DAO.impl.StudentDAOImpl;
 
 public class DAOFactory {
 
