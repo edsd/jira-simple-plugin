@@ -36,45 +36,5 @@
                 </div>
             </form>
         </div>
-        <form action="/secure/action!add.jspa">
-            <input type="hidden" name="pid" value="$project.getId()"/>
-            <input type="text" name="name"/>
-            <input type="text" name="surname"/>
-            <input type="submit" value="OK"/>
-        </form>
-        <table>
-            <thead>
-                <th>
-                    id
-                </th>
-                <th>
-                    name
-                </th>
-                <th>
-                    surname
-                </th>
-                <th>
-                    created
-                </th>
-            </thead>
-            <tbody>
-            #foreach($student in $students)
-                <tr>
-                    <td>
-                        $student.getID()
-                    </td>
-                    <td>
-                        $student.getName()
-                    </td>
-                    <td>
-                        $student.getSurname()
-                    </td>
-                    <td>
-                        $student.getCreated()
-                    </td>
-                </tr>
-            #end
-            </tbody>
-        </table>
     </body>
 </html>
