@@ -27,9 +27,11 @@ jQuery(function() {
         JIRA.Admin.StudentTable = new JIRA.RestfulTable({
             el: $table,
             url: getResourceURL(),
+            editable: true,
             entries: students,
             noEntriesMsg: 'There are currently no students for this project.',
             views: {
+                editRow: JIRA.Admin.Student.EditStudentRow,
                 row: JIRA.Admin.Student.StudentRow
             }
 

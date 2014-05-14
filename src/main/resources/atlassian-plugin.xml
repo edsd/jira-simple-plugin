@@ -41,6 +41,7 @@
         
         <resource type="download" name="student-soy.js" location="myaction/templates/student.soy"/>
         <resource type="download" name="StudentRow.js" location="myaction/js/StudentRow.js"/>
+        <resource type="download" name="EditStudentRow.js" location="myaction/js/EditStudentRow.js"/>
         <resource type="download" name="student-init.js" location="myaction/js/student-init.js"/>
         <context>my-resources</context>
     </web-resource>

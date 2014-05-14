@@ -8,14 +8,44 @@
     <span class="project-config-icon project-config-icon-student"></span>
 </td>
 <td class="project-config-student-name">
+    <span class="jira-restfultable-editable" data-field-name="name">
+    <span class="icon icon-edit-sml"></span>
     {$student.name}
+    </span>
 </td>
 <td class="project-config-student-surname">
+    <span class="jira-restfultable-editable" data-field-name="surname">
+    <span class="icon icon-edit-sml"></span>
     {$student.surname}
+    </span>
 </td>
 <td class="project-config-student-created">
     {$student.created}
 </td>
-<td class="jira-restfultable-operations"></td>
+<td class="jira-restfultable-operations">
+    <ul class="first ops">
+        <li class="last">
+            <a class="project-config-student-delete button first last" href="#">{getText('common.words.delete')}</a>
+        </li>
+    </ul>
+</td>
 <td class="project-config-throbber"></td>
+{/template}
+
+/**
+* @param student
+*/
+{template .editStudentRow}
+<td class="jira-restfultable-icon project-config-student-icon">
+    <span class="project-config-icon project-config-icon-student"></span>
+</td>
+<td class="project-config-student-name">
+    <input name="name" id="project-config-student-name-input" type="text" class="text" value="{$student.name ? $student.name : ''}"  />
+</td>
+<td class="project-config-student-surname">
+    <input name="surname" id="project-config-student-surname-input" type="text" class="text" value="{$student.surname ? $student.surname : ''}"  />
+</td>
+<td class="project-config-student-created">
+    {$student.created ? $student.created : ''}
+</td>
 {/template}

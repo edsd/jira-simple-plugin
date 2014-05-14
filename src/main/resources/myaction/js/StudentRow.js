@@ -3,6 +3,15 @@ jQuery.namespace("JIRA.Admin.Student.StudentRow");
 JIRA.Admin.Student.StudentRow = JIRA.RestfulTable.Row.extend({
     initialize: function() {
         JIRA.RestfulTable.Row.prototype.initialize.apply(this, arguments);
+        
+        this.events["click .project-config-student-delete"] = "_delete";
+        this.delegateEvents();
+    },
+    _delete: function(e) {
+        if (!confirm('Want to delete the student?'))
+            return;
+        this.model.destroy({data: this.model.toJSON()});
+        e.preventDefault();
     },
     render: function() {
 
