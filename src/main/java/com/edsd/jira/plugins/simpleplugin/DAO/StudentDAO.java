@@ -11,4 +11,8 @@ public interface StudentDAO {
 
     public StudentEntity[] getStudentsForProject(long projectId) throws Exception;
 
+    public StudentEntity deleteStudent(long id) throws Exception;
+
+    public StudentEntity updateStudent(long id, Student student) throws Exception;
+
 }

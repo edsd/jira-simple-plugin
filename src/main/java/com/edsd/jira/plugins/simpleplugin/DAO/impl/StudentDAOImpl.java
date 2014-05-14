@@ -51,11 +51,51 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public StudentEntity[] getStudentsForProject(final long projectId) throws Exception {
+
         return ao.executeInTransaction(new TransactionCallback<StudentEntity[]>() {
             @Override
             public StudentEntity[] doInTransaction() {
 
                 return ao.find(StudentEntity.class, Query.select().order("NAME").where("PROJECT_ID=?", projectId));
+            }
+        });
+    }
+
+    @Override
+    public StudentEntity deleteStudent(final long id) throws Exception {
+
+        return ao.executeInTransaction(new TransactionCallback<StudentEntity>() {
+            @Override
+            public StudentEntity doInTransaction() {
+
+                StudentEntity entity = ao.find(StudentEntity.class, Query.select().where("ID=?", id))[0];
+
+                ao.delete(entity);
+
+                return entity;
+            }
+        });
+    }
+
+    @Override
+    public StudentEntity updateStudent(final long id, final Student student) throws Exception {
+
+        return ao.executeInTransaction(new TransactionCallback<StudentEntity>() {
+            @Override
+            public StudentEntity doInTransaction() {
+
+                StudentEntity entity = ao.find(StudentEntity.class, Query.select().where("ID=?", id))[0];
+
+                if (student.getName() != null) {
+                    entity.setName(student.getName());
+                }
+                if (student.getSurname() != null) {
+                    entity.setSurname(student.getSurname());
+                }
+                
+                entity.save();
+
+                return entity;
             }
         });
     }
